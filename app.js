@@ -1,894 +1,372 @@
-:root {
-  --bg: #fff9f3;
-  --bg-soft: #fff2df;
-  --surface: #ffffff;
-  --surface-soft: #f5f7fb;
-  --primary: #ff7b2c;
-  --primary-dark: #e86416;
-  --secondary: #ffd166;
-  --accent: #ff5d8f;
-  --text: #1d2433;
-  --text-soft: #58657a;
-  --line: #e8edf3;
-  --success: #1bb36a;
-  --shadow: 0 18px 45px rgba(29, 36, 51, 0.12);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(180deg, #fffdfb 0%, #fff2df 100%);
-  color: var(--text);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.section {
-  padding: 110px 0;
-}
-
-.eyebrow {
-  display: inline-block;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.72rem;
-  color: var(--primary-dark);
-  background: rgba(255, 123, 44, 0.1);
-  padding: 9px 14px;
-  border-radius: 999px;
-  margin-bottom: 18px;
-}
-
-.section-heading {
-  margin-bottom: 42px;
-}
-
-.section-heading.centered {
-  text-align: center;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.15;
-  color: var(--text);
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 249, 243, 0.8);
-  border-bottom: 1px solid rgba(29, 36, 51, 0.04);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 86px;
-  gap: 20px;
-}
-
-.brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--primary), #ff9b62);
-  font-size: 1.6rem;
-  box-shadow: var(--shadow);
-}
-
-.brand-name {
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  font-size: 1.02rem;
-  color: var(--text);
-}
-
-.brand-tag {
-  color: var(--text-soft);
-  font-size: 0.72rem;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  color: var(--text-soft);
-  font-weight: 600;
-}
-
-.nav-links a:hover {
-  color: var(--primary-dark);
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.primary-btn,
-.secondary-btn,
-.mini-btn,
-.filter-btn,
-.close-cart,
-.close-modal {
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.primary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  border-radius: 12px;
-  padding: 14px 20px;
-  font-weight: 700;
-  box-shadow: 0 16px 28px rgba(255, 123, 44, 0.22);
-}
-
-.primary-btn:hover {
-  transform: translateY(-2px);
-}
-
-.secondary-btn {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  color: var(--text);
-  border-radius: 12px;
-  padding: 13px 18px;
-  font-weight: 700;
-}
-
-.secondary-btn:hover {
-  border-color: rgba(255, 123, 44, 0.4);
-  color: var(--primary-dark);
-}
-
-.cart-btn {
-  position: relative;
-}
-
-.cart-btn span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--text);
-  margin-left: 10px;
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-.hero {
-  padding-top: 52px;
-  padding-bottom: 72px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 42px;
-}
-
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-}
-
-.hero-copy p {
-  max-width: 620px;
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: var(--text-soft);
-  margin-top: 24px;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(120px, 1fr));
-  gap: 18px;
-  margin-top: 40px;
-}
-
-.hero-stats div {
-  padding: 20px 18px;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid rgba(232, 237, 243, 0.8);
-  border-radius: 18px;
-}
-
-.hero-stats strong {
-  display: block;
-  font-size: 1.5rem;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-
-.hero-stats span {
-  color: var(--text-soft);
-  font-size: 0.82rem;
-}
-
-.hero-visual {
-  position: relative;
-}
-
-.drink-spotlight {
-  position: relative;
-  padding: 18px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, rgba(255, 123, 44, 0.1), rgba(255, 209, 102, 0.2));
-  border: 1px solid rgba(255, 123, 44, 0.12);
-}
-
-.spotlight-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(232, 237, 243, 0.9);
-  border-radius: 26px;
-  box-shadow: var(--shadow);
-}
-
-.spotlight-card.large {
-  padding: 28px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.badge {
-  display: inline-block;
-  align-self: flex-start;
-  background: rgba(27, 179, 106, 0.1);
-  color: var(--success);
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 8px 12px;
-  border-radius: 999px;
-  margin-bottom: 16px;
-}
-
-.drink-icon {
-  font-size: 4rem;
-}
-
-.spotlight-card h3,
-.spotlight-card h4 {
-  margin: 0;
-  margin-top: 22px;
-  font-size: 1.8rem;
-}
-
-.spotlight-card p {
-  color: var(--text-soft);
-  line-height: 1.7;
-  margin: 14px 0 18px;
-}
-
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-
-.price {
-  color: var(--text);
-  font-size: 1.8rem;
-  font-weight: 800;
-}
-
-.mini-btn {
-  background: var(--primary);
-  color: white;
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-weight: 700;
-}
-
-.mini-stack {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(120px, 1fr));
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.spotlight-card.small {
-  padding: 22px 18px;
-}
-
-.spotlight-card.small h4 {
-  margin-top: 10px;
-  font-size: 1.12rem;
-}
-
-.spotlight-card.small span {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.trust-strip {
-  padding: 18px 0 0;
-}
-
-.trust-grid {
-  background: linear-gradient(135deg, var(--text), #2c374a);
-  color: rgba(255, 255, 255, 0.9);
-  border-radius: 22px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-  gap: 16px;
-  padding: 26px 24px;
-  box-shadow: var(--shadow);
-}
-
-.trust-grid > div {
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 36px;
-}
-
-.filter-btn {
-  background: white;
-  border: 1px solid var(--line);
-  color: var(--text);
-  padding: 11px 17px;
-  border-radius: 999px;
-  font-weight: 700;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background: rgba(255, 123, 44, 0.1);
-  color: var(--primary-dark);
-  border-color: rgba(255, 123, 44, 0.25);
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(230px, 1fr));
-  gap: 22px;
-}
-
-.product-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: 0 10px 25px rgba(29, 36, 51, 0.04);
-  transition: 0.25s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
-
-.product-top {
-  background: linear-gradient(135deg, rgba(255, 123, 44, 0.08), rgba(255, 209, 102, 0.16));
-  border-radius: 18px;
-  min-height: 110px;
-  display: grid;
-  place-items: center;
-  font-size: 3.5rem;
-}
-
-.product-card h3 {
-  margin: 18px 0 10px;
-  font-size: 1.35rem;
-}
-
-.product-card p {
-  margin: 0;
-  color: var(--text-soft);
-  line-height: 1.7;
-}
-
-.product-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.product-price {
-  font-size: 1.44rem;
-  font-weight: 800;
-}
-
-.product-card .mini-btn {
-  padding: 10px 14px;
-}
-
-.feature-grid,
-.review-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-  gap: 22px;
-}
-
-.feature-card,
-.review-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 28px 24px;
-  box-shadow: 0 12px 24px rgba(29, 36, 51, 0.04);
-}
-
-.feature-icon {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 16px;
-  background: rgba(255, 123, 44, 0.08);
-  font-size: 1.7rem;
-}
-
-.feature-card h3 {
-  margin: 18px 0 12px;
-  font-size: 1.2rem;
-}
-
-.feature-card p,
-.review-card p {
-  margin: 0;
-  line-height: 1.8;
-  color: var(--text-soft);
-}
-
-.review-grid {
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-}
-
-.stars {
-  color: #ffb000;
-  letter-spacing: 0.18em;
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
-
-.person {
-  margin-top: 18px;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.person strong {
-  font-size: 0.98rem;
-}
-
-.person span {
-  color: var(--text-soft);
-  font-size: 0.8rem;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.contact-copy h2 {
-  margin: 0;
-  font-size: clamp(2.1rem, 4vw, 3rem);
-}
-
-.contact-copy p {
-  max-width: 560px;
-  color: var(--text-soft);
-  line-height: 1.9;
-  margin: 22px 0 18px;
-}
-
-.contact-copy ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 12px;
-  color: var(--text);
-  font-weight: 600;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 28px;
-  box-shadow: 0 12px 24px rgba(29, 36, 51, 0.04);
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.field label {
-  font-weight: 700;
-  color: var(--text);
-}
-
-.field input,
-.field textarea,
-.field select {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: var(--surface-soft);
-  padding: 14px 16px;
-  border-radius: 14px;
-  color: var(--text);
-}
-
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
-  outline: 2px solid rgba(255, 123, 44, 0.15);
-  border-color: rgba(255, 123, 44, 0.35);
-}
-
-.submit-btn {
-  width: 100%;
-  margin-top: 8px;
-}
-
-.site-footer {
-  background: #1d2433;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 28px 0;
-}
-
-.footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.footer-row p {
-  margin: 8px 0 0;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.cart-panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: min(420px, 92vw);
-  height: 100vh;
-  background: white;
-  box-shadow: -8px 0 30px rgba(29, 36, 51, 0.18);
-  transform: translateX(102%);
-  transition: transform 0.25s ease;
-  z-index: 60;
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-panel.open {
-  transform: translateX(0);
-}
-
-.cart-header,
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 20px 18px;
-  border-bottom: 1px solid var(--line);
-}
-
-.cart-header h3,
-.modal-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.close-cart,
-.close-modal {
-  background: transparent;
-  font-size: 2rem;
-  line-height: 1;
-  color: var(--text-soft);
-}
-
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 18px 20px;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.cart-item-name {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-}
-
-.cart-item-qty {
-  font-size: 0.88rem;
-  color: var(--text-soft);
-}
-
-.cart-item-price {
-  font-weight: 800;
-}
-
-.cart-total-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 20px 14px;
-  border-top: 1px solid var(--line);
-  font-size: 1.1rem;
-}
-
-.checkout-btn {
-  margin: 0 20px 20px;
-  width: calc(100% - 40px);
-}
-
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(13, 19, 29, 0.55);
-  display: grid;
-  place-items: center;
-  z-index: 70;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.modal.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-dialog {
-  width: min(760px, 92vw);
-  max-height: 88vh;
-  overflow: auto;
-  background: white;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-}
-
-.admin-login,
-.admin-content {
-  padding: 20px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-.admin-form {
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 20px;
-}
-
-.admin-list-wrap {
-  margin-top: 26px;
-}
-
-.admin-list-wrap h4 {
-  margin: 0 0 14px;
-}
-
-.admin-product-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-}
-
-.admin-product-row strong {
-  display: block;
-}
-
-.admin-product-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.admin-product-actions button {
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 8px 10px;
-  color: white;
-  font-weight: 700;
-}
-
-.admin-product-actions .edit-btn {
-  background: #2d7ff9;
-}
-
-.admin-product-actions .delete-btn {
-  background: #f04e4e;
-}
-
-.toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: rgba(29, 36, 51, 0.96);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.26s ease;
-  z-index: 90;
-}
-
-.toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-@media (max-width: 980px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hero-grid,
-  .contact-grid,
-  .feature-grid,
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-  }
-
-  .feature-grid {
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 720px) {
-  .hero-grid,
-  .contact-grid,
-  .feature-grid,
-  .review-grid,
-  .product-grid,
-  .trust-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-actions,
-  .nav-actions {
-    flex-wrap: wrap;
-  }
-
-  .footer-row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .section {
-    padding: 80px 0;
-  }
-}
-
-@media (max-width: 520px) {
-  .nav {
-    flex-wrap: wrap;
-    padding: 14px 0;
-  }
-
-  .nav-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-actions > * {
-    flex: 1;
-  }
-
-  .brand-name {
-    letter-spacing: 0.02em;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAMDEV SODA | Premium Cold Drinks</title>
+    <meta
+      name="description"
+      content="RAMDEV SODA is a premium cold drinks shop with fresh products, easy ordering, and an admin dashboard."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="brand-wrap">
+          <div class="brand-icon">🥤</div>
+          <div>
+            <div class="brand-name">RAMDEV SODA</div>
+            <div class="brand-tag">Fresh. Fast. Premium.</div>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#features">Why Us</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="secondary-btn" id="adminBtn">Admin</button>
+          <button class="primary-btn cart-btn" id="cartToggleBtn">
+            Cart <span id="cartCount">0</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Premium Cold Drink Experience</span>
+            <h1>Cold drinks that refresh every moment.</h1>
+            <p>
+              Discover premium sodas, juices, shakes, and chilled favorites prepared
+              with quality ingredients and served fresh every time.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#shop" class="primary-btn">Shop Now</a>
+              <button class="secondary-btn" id="exploreBtn">Explore Menu</button>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <strong>1500+</strong>
+                <span>Happy Customers</span>
+              </div>
+              <div>
+                <strong>24/7</strong>
+                <span>Service Ready</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Customer Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="drink-spotlight">
+              <div class="spotlight-card large">
+                <span class="badge">Best Seller</span>
+                <div class="drink-icon">🥤</div>
+                <h3>Mango Blast</h3>
+                <p>Fresh mango shake with chilled delight</p>
+                <div class="price-row">
+                  <span class="price">₹140</span>
+                  <button class="mini-btn" data-product-id="mango-blast">Add</button>
+                </div>
+              </div>
+
+              <div class="mini-stack">
+                <div class="spotlight-card small">
+                  <div class="drink-icon">🍋</div>
+                  <h4>Lemon Fizz</h4>
+                  <span>₹90</span>
+                </div>
+                <div class="spotlight-card small">
+                  <div class="drink-icon">🧊</div>
+                  <h4>Cold Cola</h4>
+                  <span>₹75</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div class="container trust-grid">
+          <div>Fresh ingredients</div>
+          <div>Fast delivery</div>
+          <div>Premium taste</div>
+          <div>Customer first</div>
+        </div>
+      </section>
+
+      <section class="shop section" id="shop">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Our Menu</span>
+            <h2>Choose your favorite chilled drink</h2>
+          </div>
+
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="soda">Soda</button>
+            <button class="filter-btn" data-filter="juice">Juice</button>
+            <button class="filter-btn" data-filter="shake">Shake</button>
+            <button class="filter-btn" data-filter="special">Special</button>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <section class="features section" id="features">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="eyebrow">Why RAMDEV SODA</span>
+            <h2>Built for flavor, comfort and trust</h2>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">✨</div>
+              <h3>Freshly Made</h3>
+              <p>Prepared with fresh ingredients and served chilled to perfection.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🚚</div>
+              <h3>Quick Delivery</h3>
+              <p>Fast service with smooth order preparation and reliable delivery.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💸</div>
+              <h3>Affordable Pricing</h3>
+              <p>Premium quality at prices that fit daily cravings and family orders.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Trusted Service</h3>
+              <p>Reliable quality control, hygienic preparation, and consistent taste.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews section" id="reviews">
+        <div class="container">
+          <div class="section-heading centered">
+            <span class="eyebrow">Testimonials</span>
+            <h2>What customers say</h2>
+          </div>
+
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Best cold drinks in the area. Taste is always fresh and the service is super quick.”
+              </p>
+              <div class="person">
+                <strong>Rohit Sharma</strong>
+                <span>Regular Customer</span>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “The mango shake is amazing and the pricing is very reasonable. Highly recommended.”
+              </p>
+              <div class="person">
+                <strong>Neha Verma</strong>
+                <span>Customer</span>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Professional setup, great design and a really smooth ordering experience.”
+              </p>
+              <div class="person">
+                <strong>Ajay Singh</strong>
+                <span>Business Client</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Order now or ask us anything.</h2>
+            <p>
+              Need a custom drink list, bulk order, or a quick business package? We are here to help.
+            </p>
+            <ul>
+              <li>📍 Main Market, Your City</li>
+              <li>📞 +91 98765 43210</li>
+              <li>✉️ hello@ramdevsoda.com</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Your email" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" placeholder="Tell us what you need"></textarea>
+            </div>
+            <button class="primary-btn submit-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart" id="closeCartBtn">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button class="primary-btn checkout-btn" id="checkoutBtn">Place Order</button>
+    </aside>
+
+    <div class="modal" id="adminModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <h3>Admin Panel</h3>
+          <button class="close-modal" id="closeAdminBtn">×</button>
+        </div>
+
+        <div class="admin-login" id="adminLoginWrap">
+          <div class="field">
+            <label for="adminPassword">Password</label>
+            <input type="password" id="adminPassword" placeholder="Enter admin password" />
+          </div>
+          <button class="primary-btn" id="adminLoginBtn">Login</button>
+        </div>
+
+        <div class="admin-content hidden" id="adminContent">
+          <form class="admin-form" id="adminProductForm">
+            <div class="field">
+              <label>Product Name</label>
+              <input type="text" id="productName" required />
+            </div>
+            <div class="field">
+              <label>Category</label>
+              <select id="productCategory" required>
+                <option value="soda">Soda</option>
+                <option value="juice">Juice</option>
+                <option value="shake">Shake</option>
+                <option value="special">Special</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Emoji</label>
+              <input type="text" id="productIcon" value="🥤" maxlength="2" required />
+            </div>
+            <div class="field">
+              <label>Price (₹)</label>
+              <input type="number" id="productPrice" min="1" required />
+            </div>
+            <div class="field">
+              <label>Description</label>
+              <textarea id="productDescription" rows="3" required></textarea>
+            </div>
+            <button class="primary-btn" type="submit">Add Product</button>
+          </form>
+
+          <div class="admin-list-wrap">
+            <h4>Current Products</h4>
+            <div id="adminList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div>
+          <div class="brand-name" style="color:#fff;">RAMDEV SODA</div>
+          <p>Fresh drinks and cheerful service every day.</p>
+        </div>
+        <div>© 2026 RAMDEV SODA</div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

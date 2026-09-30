@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMDEV SODA - Cold Drinks Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🥤 RAMDEV SODA</h1>
+            <p>Best Cold Drinks in Town</p>
+            <div class="nav-buttons">
+                <button class="btn btn-primary" onclick="showCustomerView()">🛍️ Customer</button>
+                <button class="btn btn-danger" onclick="goToAdminPanel()">🔐 Admin Panel</button>
+            </div>
+        </header>
+
+        <!-- Customer View -->
+        <div id="customerView" class="view-section active">
+            <h2>Our Drinks</h2>
+            <div id="drinksContainer" class="drinks-grid">
+                <!-- Drinks will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
